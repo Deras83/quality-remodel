@@ -67,13 +67,26 @@
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-/* NUEVO: Estilo para las imágenes dentro de <picture> */
-.service-image-fluid {
+.service-card picture {
+    position: absolute; /* Agregado */
+    top: 0;             /* Agregado */
+    left: 0;            /* Agregado */
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    display: block;
+}
+
+/* NUEVO: Estilo para las imágenes dentro de <picture> */
+.service-image-fluid {
+    position: absolute; /* Esto la obliga a alinearse con la tarjeta */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Esto hace que se recorte para llenar el cuadro sin deformarse */
     display: block;
     transition: transform 0.5s ease;
+    z-index: 1; /* Para que quede detrás del texto */
 }
 
 .service-image {
@@ -225,3 +238,4 @@
     border-radius: 2px;
     transition: 0.3s;
 }
+
