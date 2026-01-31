@@ -18,23 +18,31 @@
 </head>
 <body>
     <header class="header">
-        <nav class="nav">
-            <div class="logo">
-                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                </svg>
-                <span>Quality Remodel</span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="service.html" class="active">Service</a></li>
-                <li><a href="jobs.html">Jobs</a></li>
-            </ul>
-            <div class="contact-phone">
-               +1 516-503-1298
-            </div>
-        </nav>
+<nav class="nav">
+    <div class="logo">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+        </svg>
+        <span>Quality Remodel</span>
+    </div>
+
+    <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="service.html">Service</a></li>
+        <li><a href="jobs.html">Jobs</a></li>
+    </ul>
+
+    <div class="menu-hamburger" id="menuHamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <div class="contact-phone">
+        <p>+1 516-503-1298</p>
+    </div>
+</nav>
     </header>
 
     <section class="bathroom-hero">
@@ -615,5 +623,25 @@
             },
         });
     </script>
+
+    <script>
+    const menuHamburger = document.getElementById('menuHamburger');
+    const navLinks = document.getElementById('navLinks');
+
+    // Abre/Cierra el menú
+    menuHamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        menuHamburger.classList.toggle('toggle'); // Esto es para la animación opcional
+    });
+
+    // Cierra el menú si se hace click en un enlace
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            menuHamburger.classList.remove('toggle');
+        });
+    });
+</script>
 </body>
+
 </html>
