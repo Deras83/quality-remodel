@@ -121,7 +121,7 @@ body {
    ABOUT SECTION
    =================================== */
 .about {
-    padding: 5rem 2rem;
+    padding: 2rem 1rem;
     background-color: #fff;
 }
 
@@ -134,8 +134,8 @@ body {
     align-items: center;
 }
 .about-image {
-     width: 600px;      /* ← ANCHO FIJO: 600px */
-    height: 450px;     /* ← ALTO FIJO: 450px */
+    width: 100% !important; /* ¡ESTO CORRIGE EL ERROR! Quita los 600px */
+    height: auto !important;    /* ← ALTO FIJO: 450px */
     margin: 0 auto;
     overflow: hidden; 
 }
@@ -149,7 +149,7 @@ body {
 }
 
 .about-text h2 {
-    font-size: 2rem;
+    font-size: 1.6rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
     color: #222;
@@ -404,3 +404,4 @@ body {
         display: none; 
     }
 }
+
