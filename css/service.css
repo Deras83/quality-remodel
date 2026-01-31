@@ -154,13 +154,14 @@
         visibility: visible;
         background: rgba(0, 0, 0, 0.5);
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         justify-content: center;
+       padding-top: 20px;
     }
     
     .service-card .service-overlay h3 {
         transform: translateY(0);
-        font-size: 2.2rem; /* Texto más grande */
+        font-size: 1.4rem; /* Texto más grande */
         font-weight: 700;
         text-align: center;
     }
@@ -212,3 +213,4 @@
     border-radius: 2px;
     transition: 0.3s;
 }
+
