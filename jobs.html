@@ -23,13 +23,21 @@
                 </svg>
                 <span>Quality Remodel</span>
             </div>
-            <ul class="nav-links">
+        
+            <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="service.html">Service</a></li>
-                <li><a href="jobs.html" class="active">Jobs</a></li>
+                <li><a href="jobs.html">Jobs</a></li>
             </ul>
+        
+            <div class="menu-hamburger" id="menuHamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        
             <div class="contact-phone">
-                <a href="tel:+15165031298">+1 516-503-1298</a>
+                <p>+1 516-503-1298</p>
             </div>
         </nav>
     </header>
@@ -93,5 +101,24 @@
     </footer>
 
     <script src="js/main.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        const menuHamburger = document.getElementById('menuHamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        // Abre y cierra el menú al tocar la hamburguesa
+        menuHamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Cierra el menú automáticamente si tocas un enlace (importante para navegación interna)
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
 </body>
+
 </html>
