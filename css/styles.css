@@ -322,9 +322,8 @@ body {
 .footer a:hover {
     color: #8B4513;
 }
-
 /* ===================================
-   RESPONSIVE DESIGN
+   RESPONSIVE DESIGN (Modificado)
    =================================== */
 @media (max-width: 1024px) {
     .features {
@@ -336,11 +335,54 @@ body {
     }
 }
 
+/* --- ESTILO PARA COMPUTADORA (Botón oculto) --- */
+.menu-hamburger {
+    display: none; 
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    z-index: 1100;
+}
+
+.menu-hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+/* --- AJUSTES PARA CELULAR --- */
 @media (max-width: 768px) {
-    .nav-links {
-        display: none;
+    /* Mostramos las tres líneas */
+    .menu-hamburger {
+        display: flex; 
     }
-    
+
+    /* Modificamos nav-links para que sea el menú lateral */
+    .nav-links {
+        display: flex; /* Cambiado de 'none' a 'flex' para que sea visible */
+        position: fixed;
+        right: -100%; /* Lo mandamos fuera de la pantalla a la derecha */
+        top: 0;
+        background-color: white;
+        width: 75%; 
+        height: 100vh;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        transition: 0.5s ease;
+        box-shadow: -10px 0 20px rgba(0,0,0,0.1);
+        z-index: 1050;
+    }
+
+    /* Esta clase la activa el JavaScript al hacer click */
+    .nav-links.active {
+        right: 0 !important;
+    }
+
+    /* Tus estilos originales de móvil se mantienen igual */
     .hero-title {
         font-size: 2.5rem;
     }
@@ -357,52 +399,8 @@ body {
     .service-grid {
         grid-template-columns: 1fr;
     }
-}
-/* --- ESTILO PARA COMPUTADORA (Invisible) --- */
-.menu-hamburger {
-    display: none; /* Se oculta en PC */
-    flex-direction: column;
-    cursor: pointer;
-    gap: 5px;
-    z-index: 1100;
-}
-
-.menu-hamburger span {
-    width: 25px;
-    height: 3px;
-    background-color: #333;
-    border-radius: 2px;
-    transition: 0.3s;
-}
-
-/* --- ESTILO PARA CELULAR (Aparece aquí) --- */
-@media (max-width: 768px) {
-    .menu-hamburger {
-        display: flex; /* Se muestra solo en pantallas pequeñas */
-    }
-
-    .nav-links {
-        position: fixed;
-        right: -100%; /* Escondido a la derecha */
-        top: 0;
-        background-color: white;
-        width: 75%; /* Ancho del menú desplegable */
-        height: 100vh;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 30px;
-        transition: 0.5s ease;
-        box-shadow: -10px 0 20px rgba(0,0,0,0.1);
-        z-index: 1050;
-    }
-
-    /* Clase que activa el JS para mostrar el menú */
-    .nav-links.active {
-        right: 0;
-    }
 
     .contact-phone {
-        display: none; /* Ocultamos el número largo en móvil para dar espacio */
+        display: none; 
     }
 }
