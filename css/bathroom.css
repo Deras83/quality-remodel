@@ -1,0 +1,138 @@
+/* ===================================
+   BATHROOM PAGE - HERO BANNER
+   =================================== */
+.bathroom-hero {
+    position: relative;
+    min-height: 100px;
+    max-width: 700px;
+    margin: 2rem auto;
+    background-image: url('../assets/img/bathroom/banner-bath.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.bathroom-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.bathroom-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.bathroom-hero-title-white {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+    text-transform: capitalize;
+    letter-spacing: 2px;
+}
+
+/* ===================================
+   GRID DE TRABAJOS (4 COLUMNAS)
+   =================================== */
+.bathroom-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Crea las 4 columnas */
+    gap: 15px; /* Espaciado entre cuadros */
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+}
+
+/* El cuadro base (Cubo) */
+.gallery-item {
+    aspect-ratio: 1 / 1; /* Los hace cuadrados perfectos */
+    background: #f4f4f4;
+    overflow: hidden;
+    border-radius: 4px;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Configuración de Imágenes y Swiper */
+.swiper, .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Configuración de Videos */
+.video-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Botones de navegación (Flechas) */
+.swiper-button-next, .swiper-button-prev {
+    color: white !important;
+    background: rgba(0,0,0,0.3);
+    width: 35px !important;
+    height: 35px !important;
+    border-radius: 50%;
+}
+
+.swiper-button-next::after, .swiper-button-prev::after {
+    font-size: 14px !important;
+}
+
+/* Color del punto activo (si decides usar paginación) */
+.swiper-pagination-bullet-active {
+    background: #8B4513 !important;
+}
+.swiper-slide a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: zoom-in; /* Cambia el cursor para indicar que se puede ampliar */
+}
+
+/* Asegura que la ventana emergente esté sobre el header */
+.fancybox__container {
+    z-index: 9999;
+}
+
+/* Evita que el scroll de la página moleste al abrir una foto */
+.is-flipped {
+    overflow: hidden;
+}
+
+/* ===================================
+   RESPONSIVE (AJUSTES MÓVILES)
+   =================================== */
+@media (max-width: 1024px) {
+    .bathroom-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .bathroom-hero-title-white {
+        font-size: 2.5rem;
+    }
+    .bathroom-hero {
+        margin: 1rem;
+        min-height: 150px;
+    }
+}
+
+@media (max-width: 600px) {
+    .bathroom-grid {
+        grid-template-columns: 1fr; /* 1 columna en celulares */
+    }
+}

@@ -1,0 +1,145 @@
+/* ===================================
+    JOBS PAGE - HERO BANNER
+   =================================== */
+.jobs-hero {
+    position: relative;
+    min-height: 100px; /* Ajustado para que se vea el banner */
+    max-width: 700px;
+    margin: 2rem auto;
+    background-image: url('../assets/img/service/banner.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 2rem;
+}
+
+.jobs-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.jobs-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.jobs-hero-title-white {
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+    text-transform: capitalize;
+}
+
+/* ===================================
+    JOBS SECTION - GRID
+   =================================== */
+.jobs-section {
+    padding: 5rem 2rem;
+    background-color: #fff;
+}
+
+.jobs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* LA TARJETA DE TRABAJO */
+.job-card {
+    position: relative;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.job-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    aspect-ratio: 4/3;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.job-image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s ease;
+}
+
+/* EL OVERLAY (Solo oscurece la imagen) */
+.job-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0; /* Invisible por defecto */
+    transition: opacity 0.3s ease;
+}
+
+/* INFO DEBAJO DE LA IMAGEN */
+.job-info {
+    padding: 1.5rem 0.5rem;
+    text-align: center;
+}
+
+.job-info h3 {
+    color: #333;
+    font-size: 1.4rem;
+    font-weight: 400; /* PESO NORMAL como pediste */
+    margin: 0;
+    text-transform: capitalize;
+}
+
+/* ===================================
+    ESTADOS HOVER
+   =================================== */
+
+/* Oscurecer imagen */
+.job-card:hover .job-overlay {
+    opacity: 1;
+}
+
+/* Zoom a la imagen */
+.job-card:hover .job-image {
+    transform: scale(1.1);
+}
+
+/* Sutil elevación de la tarjeta */
+.job-card:hover {
+    transform: translateY(-5px);
+}
+
+/* ===================================
+    RESPONSIVE
+   =================================== */
+@media (max-width: 992px) {
+    .jobs-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .jobs-grid {
+        grid-template-columns: 1fr;
+    }
+    .jobs-hero-title-white {
+        font-size: 2.5rem;
+    }
+}

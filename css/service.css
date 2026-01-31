@@ -1,0 +1,151 @@
+/* ===================================
+   SERVICE PAGE - HERO BANNER
+   =================================== */
+.service-hero {
+    position: relative;
+    min-height: 100px;
+    max-width: 700px; /* Igual que en Jobs */
+    margin: 2rem auto;
+    background-image: url('../assets/img/service/service-banner.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 2rem;
+}
+
+.service-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.service-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.service-hero-title-white {
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+    text-transform: capitalize;
+}
+
+/* ===================================
+   SERVICES SECTION - GRID (IGUAL QUE JOBS)
+   =================================== */
+.services {
+    padding: 5rem 2rem; /* Aumentado de 3rem a 5rem para igualar a Jobs */
+    background-color: #fff;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;       /* Aumentado a 2.5rem igual que Jobs */
+    max-width: 1200px; /* Aumentado a 1200px igual que Jobs */
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+/* LA TARJETA */
+.service-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    aspect-ratio: 4/3; /* Cambiado de 1/1 a 4/3 para igualar a Jobs */
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.service-image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s ease;
+}
+
+/* EL OVERLAY */
+.service-card .service-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+    z-index: 5;
+}
+
+/* EL TEXTO DENTRO DE LA IMAGEN */
+.service-card .service-overlay h3 {
+    color: white !important;
+    font-size: 1.4rem; 
+    font-weight: 400; 
+    text-align: center;
+    margin: 0;
+    padding: 0 10px;
+    transform: translateY(20px);
+    transition: transform 0.4s ease;
+}
+
+/* ===================================
+   ESTADOS HOVER
+   =================================== */
+.service-card:hover .service-overlay {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.service-card:hover .service-overlay h3 {
+    transform: translateY(0);
+}
+
+.service-card:hover .service-image {
+    transform: scale(1.1);
+}
+
+/* ===================================
+   RESPONSIVE
+   =================================== */
+@media (max-width: 992px) {
+    .service-grid {
+        grid-template-columns: repeat(2, 1fr); /* Agregado para igualar a Jobs */
+    }
+}
+
+@media (max-width: 768px) {
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-hero-title-white {
+        font-size: 2.5rem;
+    }
+
+    .service-card .service-overlay {
+        opacity: 1;
+        visibility: visible;
+        background: rgba(0, 0, 0, 0.4);
+    }
+    
+    .service-card .service-overlay h3 {
+        transform: translateY(0);
+        font-size: 1.8rem;
+    }
+}
