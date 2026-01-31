@@ -156,12 +156,12 @@
         display: flex;
         align-items: flex-start;
         justify-content: center;
-       padding-top: 20px;
+       padding-top: 40px;
     }
     
     .service-card .service-overlay h3 {
         transform: translateY(0);
-        font-size: 2.2rem; /* Texto más grande */
+        font-size: 1.6rem; /* Texto más grande */
         font-weight: 700;
         text-align: center;
     }
@@ -213,5 +213,6 @@
     border-radius: 2px;
     transition: 0.3s;
 }
+
 
 
