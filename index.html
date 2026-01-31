@@ -136,6 +136,26 @@
     </footer>
 
     <script src="js/main.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        const menuHamburger = document.getElementById('menuHamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        // Abre y cierra el menú al tocar la hamburguesa
+        menuHamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Cierra el menú automáticamente si tocas un enlace (importante para navegación interna)
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>
+
 
