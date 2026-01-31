@@ -119,33 +119,96 @@
 .service-card:hover .service-image {
     transform: scale(1.1);
 }
-
 /* ===================================
    RESPONSIVE
    =================================== */
 @media (max-width: 992px) {
     .service-grid {
-        grid-template-columns: repeat(2, 1fr); /* Agregado para igualar a Jobs */
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 768px) {
+    /* Ajustes de la cuadrícula y contenedores */
+    .services {
+        padding: 3rem 1rem;
+    }
+
     .service-grid {
         grid-template-columns: 1fr;
+        padding: 0; /* Eliminamos el espacio lateral para cuadros más grandes */
+        gap: 1.5rem;
     }
 
     .service-hero-title-white {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
+    }
+
+    /* Cuadros más grandes y texto centrado */
+    .service-card {
+        aspect-ratio: 16/9; /* Hace el cuadro más rectangular y grande */
     }
 
     .service-card .service-overlay {
         opacity: 1;
         visibility: visible;
-        background: rgba(0, 0, 0, 0.4);
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     
     .service-card .service-overlay h3 {
         transform: translateY(0);
-        font-size: 1.8rem;
+        font-size: 2.2rem; /* Texto más grande */
+        font-weight: 700;
+        text-align: center;
     }
+
+    /* --- CÓDIGO DEL MENÚ PARA ESTA PÁGINA --- */
+    .menu-hamburger {
+        display: flex !important;
+    }
+
+    .nav-links {
+        display: flex !important;
+        position: fixed;
+        right: -100%;
+        top: 0;
+        background-color: white;
+        width: 75%;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        transition: 0.5s ease;
+        box-shadow: -10px 0 20px rgba(0,0,0,0.1);
+        z-index: 1050;
+    }
+
+    .nav-links.active {
+        right: 0 !important;
+    }
+
+    .contact-phone {
+        display: none;
+    }
+}
+
+/* --- ESTILO BASE HAMBURGUESA (Fuera del media query) --- */
+.menu-hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    z-index: 1100;
+}
+
+.menu-hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    border-radius: 2px;
+    transition: 0.3s;
 }
