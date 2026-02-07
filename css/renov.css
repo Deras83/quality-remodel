@@ -1,4 +1,11 @@
 /* ===================================
+   CONFIGURACIÓN GENERAL
+   =================================== */
+html {
+    scroll-behavior: smooth; /* Desplazamiento suave al usar el sub-menú */
+}
+
+/* ===================================
    RENOVATION PAGE - HERO BANNER
    =================================== */
 .renov-hero {
@@ -34,6 +41,74 @@
     margin: 0;
     text-transform: capitalize;
     letter-spacing: 2px;
+    text-align: center;
+}
+
+/* ===================================
+   SUB-MENÚ DE NAVEGACIÓN (Sticky)
+   =================================== */
+.project-nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px;
+    background: #fff;
+    position: sticky;
+    top: 60px; /* Ajusta según la altura de tu header principal */
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.p-nav-btn {
+    text-decoration: none;
+    color: #444;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 8px 15px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.p-nav-btn:hover {
+    background: #333;
+    color: #fff;
+    border-color: #333;
+}
+
+/* ===================================
+   SECCIONES Y TÍTULOS
+   =================================== */
+.renov-gallery {
+    scroll-margin-top: 130px; /* Evita que el menú tape el título al saltar */
+    max-width: 1200px;
+    margin: 0 auto 4rem auto;
+    padding: 0 1rem;
+}
+
+.category-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #222;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.category-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background: #333;
 }
 
 /* ===================================
@@ -43,9 +118,6 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 15px;
-    max-width: 1200px;
-    margin: 3rem auto;
-    padding: 0 1rem;
 }
 
 .gallery-item {
@@ -64,16 +136,17 @@
     display: block;
 }
 
+/* Estilos de Swiper */
 .swiper-button-next, .swiper-button-prev {
     color: white !important;
     background: rgba(0,0,0,0.3);
-    width: 35px !important;
-    height: 35px !important;
+    width: 30px !important;
+    height: 30px !important;
     border-radius: 50%;
 }
 
 .swiper-button-next::after, .swiper-button-prev::after {
-    font-size: 14px !important;
+    font-size: 12px !important;
 }
 
 /* Icono de Play para videos */
@@ -87,6 +160,7 @@
     pointer-events: none;
     opacity: 0.8;
 }
+
 /* Configuración de Videos */
 .video-item video {
     width: 100%;
@@ -94,10 +168,41 @@
     object-fit: cover;
 }
 
-/* Responsive */
+/* ===================================
+   RESPONSIVE (MÓVIL Y TABLET)
+   =================================== */
+
+/* Tablets */
 @media (max-width: 992px) {
-    .renov-grid { grid-template-columns: repeat(2, 1fr); }
+    .renov-grid { 
+        grid-template-columns: repeat(2, 1fr); 
+    }
+    .renov-hero-title-white {
+        font-size: 2.5rem;
+    }
 }
+
+/* Celulares */
+@media (max-width: 600px) {
+    .project-nav {
+        gap: 5px;
+        padding: 10px;
+    }
+    .p-nav-btn {
+        font-size: 0.75rem;
+        padding: 6px 12px;
+    }
+    .category-title {
+        font-size: 1.5rem;
+    }
+}
+
 @media (max-width: 480px) {
-    .renov-grid { grid-template-columns: 1fr; }
+    .renov-grid { 
+        grid-template-columns: 1fr; 
+    }
+    .renov-hero {
+        margin: 1rem;
+        min-height: 80px;
+    }
 }
